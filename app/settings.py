@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_DOMAIN = "http://127.0.0.1:8000/"
+
 
 # Application definition
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "core",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -117,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# Rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
+# Auth user
+AUTH_USER_MODEL = 'users.User'
