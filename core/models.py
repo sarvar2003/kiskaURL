@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
-class ShortURL(models.Model):
+class OriginalURL(models.Model):
     """Database model for URLs"""
     
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
@@ -19,4 +19,4 @@ class ShortURL(models.Model):
         return self.user.username
     
     def __str__(self) -> str:
-        return f"\nURL: {self.url}\nUSER: {self.user.user_name}\nDATE_CREATED: {self.date_created}\n\n"
+        return f"\nURL: {self.url}\nUSER: {self.user.username}\nDATE_CREATED: {self.date_created}\n\n"

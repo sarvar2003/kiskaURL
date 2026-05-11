@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 
-from ..models import urls
+from .. import models
 from ..utils.urls import utils
 
 
@@ -9,7 +9,7 @@ def create_or_get_short_url(user, original_url):
     
     """Handles URL creation and hashing logic"""
 
-    instance = urls.ShortURL.objects.filter(
+    instance = models.OriginalURL.objects.filter(
         user=user,
         url=original_url
         ).first()
@@ -21,14 +21,14 @@ def create_or_get_short_url(user, original_url):
         return instance
     
     # URL does not exist
-    instance = urls.ShortURL.objects.create(
+    instance = models.OriginalURL.objects.create(
         user=user,
         url=original_url
     )
 
     hashed_url = utils.hash_the_url(user, original_url)
-    instance.hashed_url = hashed_url
-    instance.short_url = f"{settings.DEFAULT_DOMAIN}{hashed_url}/"
+    instance.url_hash = hashed_url
+    instance.short_url = f"{settings.DEFAULT_DOMAIN}/api/urls/{hashed_url}/"
 
     instance.save(update_fields=["url_hash", "short_url"])
 

@@ -1,13 +1,13 @@
 from rest_framework import serializers
 
-from ..models import url
-from ..services.url_services import create_or_get_short_url
+from . import models
+from .services.url_services import create_or_get_short_url
 
 class OriginalUrlSerializer(serializers.ModelSerializer):
     """Serializer for Original URL API View"""
 
     class Meta:
-        model = url.OriginalURL
+        model = models.OriginalURL
         fields = (
             'id',
             'user',
