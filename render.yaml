@@ -2,7 +2,7 @@ databases:
   - name: kiskaURLdb
     plan: free
     databaseName: kiskaURLdb
-    user: kiskaURL
+    user: kiskaURLdb
 
 services:
   - type: web
