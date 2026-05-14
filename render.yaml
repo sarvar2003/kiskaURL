@@ -1,0 +1,22 @@
+databases:
+  - name: kiskaURLdb
+    plan: free
+    databaseName: kiskaURL
+    user: kiskaURL
+
+services:
+  - type: web
+    plan: free
+    name: kiskaURL
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn kiskaURL.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kiskaURLdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
