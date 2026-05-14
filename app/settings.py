@@ -82,10 +82,11 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/kiskaurl',
-        conn_max_age=600
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600,
+        conn_health_checks=True,
     )
-}}
+}
 
 
 # Password validation
