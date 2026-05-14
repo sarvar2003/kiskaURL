@@ -1,8 +1,8 @@
 databases:
-  - name: kiskaURLdb
+  - name: kiskaurldb
     plan: free
-    databaseName: kiskaURLdb
-    user: kiskaURLdb
+    databaseName: kiskaurldb
+    user: kiskaurluser
 
 services:
   - type: web
