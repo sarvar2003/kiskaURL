@@ -27,9 +27,9 @@ SECRET_KEY = "django-insecure-&s@p5e-2^4xnp1v2a^#czt00n#u1#-5na^o%n$p&-%kv-i@xf@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://kiskaurl.onrender.com"]
 
-DEFAULT_DOMAIN = "http://127.0.0.1:8000/"
+DEFAULT_DOMAIN = "https://kiskaurl.onrender.com"
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "corsheaders"
     "core",
     "users",
 ]
@@ -58,6 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "app.urls"
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173/'
+]
 
 TEMPLATES = [
     {
