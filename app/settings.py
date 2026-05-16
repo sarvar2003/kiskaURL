@@ -29,7 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-DEFAULT_DOMAIN = "https://kiskaurl"
+DEFAULT_DOMAIN = "https://kiskaurl.onrender.com"
 
 
 # Application definition
