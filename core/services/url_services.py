@@ -28,7 +28,7 @@ def create_or_get_short_url(user, original_url):
 
     hashed_url = utils.hash_the_url(user, original_url)
     instance.url_hash = hashed_url
-    instance.short_url = f"{settings.DEFAULT_DOMAIN}/api/urls/{hashed_url}/"
+    instance.short_url = f"{settings.DEFAULT_DOMAIN}/{hashed_url}/"
 
     instance.save(update_fields=["url_hash", "short_url"])
 
