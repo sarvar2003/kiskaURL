@@ -67,7 +67,7 @@ ROOT_URLCONF = "app.urls"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://kiskaurl.vercel.app/",
+    "https://kiskaurl.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
