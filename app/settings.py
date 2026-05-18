@@ -27,7 +27,11 @@ SECRET_KEY = "django-insecure-&s@p5e-2^4xnp1v2a^#czt00n#u1#-5na^o%n$p&-%kv-i@xf@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".onrender.com"
+]
 
 DEFAULT_DOMAIN = "https://kiskaurl.onrender.com"
 
@@ -63,7 +67,7 @@ ROOT_URLCONF = "app.urls"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "https://kiskaurl.vercel.app/",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
