@@ -86,10 +86,6 @@ Whenever user make a request to Short URL, Short URL redirects the user to Origi
 ```
 
 ---
-## Demo
-<p><a href="https://kiska.herokuapp.com/" target="_blank">Here</a> you can explore the live Swagger documented API</p>
-
----
 
 ## Features
 - User Registration
